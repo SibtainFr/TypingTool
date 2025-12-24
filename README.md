@@ -17,7 +17,7 @@ Practice with real-time feedback and track your progress through a clean and int
 
 ## ✨ Features
 
-- 🎮 **Two Game Modes**
+-  **Two Game Modes**
   - Random Words Mode
   - Paragraph Practice Mode
   - Easy: Common short words
@@ -33,7 +33,7 @@ Practice with real-time feedback and track your progress through a clean and int
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### For Users (No Python Required)
 
@@ -86,21 +86,15 @@ chmod +x TypingTool-macOS
 
 ---
 
-## 📝 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-## 🙏 Acknowledgments
-
-- Font rendering via tkinter
-- Online text generation powered by [Loripsum.net](https://loripsum.net/)
-- Built with Python and PyInstaller
+ Built with Python and PyInstaller
 
 ---
 
-## 📬 Contact
+##  Contact
 
 
 - Instagram: [@Pineapple](https://www.instagram.com/sibtain.fr/)
