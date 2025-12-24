@@ -100,14 +100,16 @@ jobs:
     - name: Display structure
       run: ls -R artifacts
 
+    - name: Prepare release files
+      run: |
+        mkdir -p release_files
+        find artifacts -type f -exec cp {} release_files/ \;
+        ls -la release_files/
+
     - name: Create Release
       uses: softprops/action-gh-release@v2
       with:
-        files: |
-          artifacts/TypingTool-Windows.exe/*
-          artifacts/TypingTool-Linux/*
-          artifacts/TypingTool-macOS/*
-        fail_on_unmatched_files: false
+        files: release_files/*
         body: |
           ##  TypingTool Release
           
