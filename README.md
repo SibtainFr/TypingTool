@@ -1,3 +1,5 @@
+# ⌨TypingTool
+
 *A modern typing speed test application that helps you boost your typing speed and accuracy.  
 Practice with real-time feedback and track your progress through a clean and intuitive interface.*
 
@@ -17,7 +19,6 @@ Practice with real-time feedback and track your progress through a clean and int
 
 ## ✨ Features
 
--  **Two Game Modes**
   - Random Words Mode
   - Paragraph Practice Mode
   - Easy: Common short words
@@ -35,33 +36,41 @@ Practice with real-time feedback and track your progress through a clean and int
 
 ##  Quick Start
 
-### For Users (No Python Required)
 
 #### Windows
-1. Download `TypingTool-Windows.exe` from [Releases](https://github.com/SibtainFr/TypingTool/releases)
+1. Download `TypingTool-Windows.exe` from [Releases](https://github.com/SibtainFr/TypingTool/releases/latest)
 2. Double-click to run
 3. Start typing!
 
-
-*Linux: Requires python3-tk package (sudo apt-get install python3-tk)*
-#### Linux
+#### 🐧 Linux
 ```bash
+# Download the file
 wget https://github.com/SibtainFr/TypingTool/releases/latest/download/TypingTool-Linux
+
+# Make it executable
 chmod +x TypingTool-Linux
+
+# Run it
 ./TypingTool-Linux
 ```
-*macOS: First run may require security approval in System Preferences*
+*Note: Requires python3-tk package. Install with: `sudo apt-get install python3-tk`*
+
 #### macOS
 ```bash
+# Download the file
 curl -L -o TypingTool-macOS https://github.com/SibtainFr/TypingTool/releases/latest/download/TypingTool-macOS
+
+# Make it executable
 chmod +x TypingTool-macOS
+
+# Run it
 ./TypingTool-macOS
 ```
-
+*Note: First run may require security approval in System Preferences → Security & Privacy*
 
 ---
 
-## 📖 How to Use
+##  How to Use
 
 1. **Select Mode**
    - Choose between Random Words or Paragraph mode
@@ -82,22 +91,27 @@ chmod +x TypingTool-macOS
    - See your WPM, accuracy, and detailed stats
    - Track your improvement over time
 
+---
 
+##  Contributing & New features
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to submit pull requests.
 
 ---
 
-##  License
+
+
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
- Built with Python and PyInstaller
 
 ---
 
-##  Contact
 
-
-- Instagram: [@Pineapple](https://www.instagram.com/sibtain.fr/)
+**SibtainFr**
+- GitHub: [@SibtainFr](https://github.com/SibtainFr)
+- Instagram: [@sibtain.fr](https://www.instagram.com/sibtain.fr/)
 
 ---
 
@@ -111,6 +125,6 @@ If you find this project useful, please consider giving it a star!
 
 **Made with ❤️ and ☕**
 
-[⬆ Back to Top](#️-typingtool---professional-typing-speed-test)
+[⬆️ Back to Top](#️-typingtool---professional-typing-speed-test)
 
 </div>
