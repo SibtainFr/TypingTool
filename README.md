@@ -30,7 +30,7 @@ Practice with real-time feedback and track your progress through a clean and int
   - Character-by-character highlighting
   - Final WPM and accuracy
   - Error count and time breakdown
-  - Performance ratings
+  - Performance ratings.
 
 ---
 
