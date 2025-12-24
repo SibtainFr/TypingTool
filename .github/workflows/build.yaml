@@ -103,7 +103,9 @@ jobs:
     - name: Prepare release files
       run: |
         mkdir -p release_files
-        find artifacts -type f -exec cp {} release_files/ \;
+        cp artifacts/TypingTool-Windows.exe/TypingTool.exe release_files/TypingTool-Windows.exe
+        cp artifacts/TypingTool-Linux/TypingTool release_files/TypingTool-Linux
+        cp artifacts/TypingTool-macOS/TypingTool release_files/TypingTool-macOS
         ls -la release_files/
 
     - name: Create Release
