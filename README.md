@@ -1,4 +1,4 @@
-# ⌨TypingTool
+# TypingTool
 
 *A modern typing speed test application that helps you boost your typing speed and accuracy.  
 Practice with real-time feedback and track your progress through a clean and intuitive interface.*
