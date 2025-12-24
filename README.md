@@ -103,7 +103,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📬 Contact
 
 
-- Instagram: [@yourhandle](https://www.instagram.com/sibtain.fr/)
+- Instagram: [@Pineapple](https://www.instagram.com/sibtain.fr/)
 
 ---
 
