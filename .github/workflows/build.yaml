@@ -1,0 +1,127 @@
+name: Build TypingTool
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+        include:
+          - os: windows-latest
+            output_name: TypingTool-Windows.exe
+            build_name: TypingTool.exe
+          - os: ubuntu-latest
+            output_name: TypingTool-Linux
+            build_name: TypingTool
+          - os: macos-latest
+            output_name: TypingTool-macOS
+            build_name: TypingTool
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install Linux dependencies
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-tk
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller requests
+
+    - name: Build with PyInstaller (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        pyinstaller --name=TypingTool --onefile --windowed --noconsole source.py
+
+    - name: Build with PyInstaller (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        pyinstaller --name=TypingTool --onefile source.py
+
+    - name: Build with PyInstaller (macOS)
+      if: runner.os == 'macOS'
+      run: |
+        pyinstaller --name=TypingTool --onefile --windowed source.py
+
+    - name: Upload Windows Artifact
+      if: runner.os == 'Windows'
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.output_name }}
+        path: dist/TypingTool.exe
+
+    - name: Upload Linux Artifact
+      if: runner.os == 'Linux'
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.output_name }}
+        path: dist/TypingTool
+
+    - name: Upload macOS Artifact
+      if: runner.os == 'macOS'
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.output_name }}
+        path: dist/TypingTool
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: artifacts
+        
+    - name: Display structure of downloaded files
+      run: ls -R artifacts
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: |
+          artifacts/TypingTool-Windows.exe/*
+          artifacts/TypingTool-Linux/*
+          artifacts/TypingTool-macOS/*
+        body: |
+          ##  TypingTool Release
+          
+          ###  Downloads:
+          - **Windows**: `TypingTool.exe` - Just download and run!
+          - **Linux**: `TypingTool` - Download, then run: `chmod +x TypingTool && ./TypingTool`
+          - **macOS**: `TypingTool` - Download, then run: `chmod +x TypingTool && ./TypingTool`
+          
+          ### ✨ Features:
+          -  Two  modes (Random Words & Paragraph)
+          -  Three difficulty levels
+          -  Flexible duration (1-5 minutes)
+          -  Real-time WPM and accuracy tracking
+         
+          ###  Bug Fixes & Changes:
+          See commit history for details.
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

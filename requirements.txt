@@ -1,0 +1,10 @@
+# TypingTool Dependencies
+
+# Core dependencies
+requests>=2.31.0
+
+# Build dependencies (for creating executables)
+pyinstaller>=5.13.0
+
+# Note: tkinter is included with Python on Windows and macOS
+# Linux users: sudo apt-get install python3-tk
