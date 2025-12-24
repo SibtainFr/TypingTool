@@ -97,16 +97,17 @@ jobs:
       with:
         path: artifacts
         
-    - name: Display structure of downloaded files
+    - name: Display structure
       run: ls -R artifacts
 
     - name: Create Release
       uses: softprops/action-gh-release@v2
       with:
         files: |
-          artifacts/TypingTool-Windows.exe/TypingTool.exe
-          artifacts/TypingTool-Linux/TypingTool
-          artifacts/TypingTool-macOS/TypingTool
+          artifacts/TypingTool-Windows.exe/*
+          artifacts/TypingTool-Linux/*
+          artifacts/TypingTool-macOS/*
+        fail_on_unmatched_files: false
         body: |
           ##  TypingTool Release
           
