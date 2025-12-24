@@ -439,7 +439,7 @@ class TypingTest:
                             bg=self.bg_secondary, fg=self.gray)
         separator.pack(side=tk.LEFT, padx=5)
         
-        instagram_link = tk.Label(footer, text="Instagram: @yourhandle",
+        instagram_link = tk.Label(footer, text="Instagram: @Pineapple",
                                  font=('Segoe UI', 9, 'bold'),
                                  bg=self.bg_secondary, fg=self.cyan,
                                  cursor='hand2')
