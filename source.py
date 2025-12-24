@@ -426,7 +426,7 @@ class TypingTest:
                               bg=self.bg_secondary, fg=self.gray)
         footer_text.pack(side=tk.LEFT, padx=15)
         
-        github_link = tk.Label(footer, text="GitHub: @Pineapple",
+        github_link = tk.Label(footer, text="GitHub",
                               font=('Segoe UI', 9, 'bold'),
                               bg=self.bg_secondary, fg=self.cyan,
                               cursor='hand2')
@@ -439,7 +439,7 @@ class TypingTest:
                             bg=self.bg_secondary, fg=self.gray)
         separator.pack(side=tk.LEFT, padx=5)
         
-        instagram_link = tk.Label(footer, text="Instagram: @Pineapple",
+        instagram_link = tk.Label(footer, text="Instagram",
                                  font=('Segoe UI', 9, 'bold'),
                                  bg=self.bg_secondary, fg=self.cyan,
                                  cursor='hand2')
